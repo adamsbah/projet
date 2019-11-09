@@ -7,7 +7,7 @@ const famille = {
  
   
   Membre1: {
-    nom: 'antho',
+    nom: 'anthoine',
     age:  18
   },
   
@@ -45,6 +45,8 @@ class  App extends Component {
   state = {
     famille
   }
+  handleClick = () => console.log('click')
+  
   render(){ 
     const {titre} = this.props
     const {famille} = this.state
@@ -62,6 +64,12 @@ class  App extends Component {
         <strong>Je suis un homme</strong>
         </Membre>
         <Button />
+        <button 
+        onClick={this.handleClick}
+        >
+        Vieillir
+        </button>
+        
       
       </div>
     
