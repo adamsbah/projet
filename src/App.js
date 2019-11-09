@@ -51,12 +51,13 @@ class  App extends Component {
     return(
       <div className="App">
       <h1>{titre}</h1>
-        <Membre nom='antho' />
-        <Membre nom='ada'/>
-        <Membre nom='amy' />
-        <Membre nom='Lily' />
-        <Membre nom='oury' />
-       <Membre nom='sadjo'>
+        <Membre nom={this.state.famille.Membre1.nom} />
+        <Membre nom={this.state.famille.Membre2.nom}/>
+        <Membre nom={this.state.famille.Membre3.nom} />
+        <Membre nom={this.state.famille.Membre4.nom} />
+        <Membre nom={this.state.famille.Membre5.nom} />
+        <Membre nom={this.state.famille.Membre6.nom} />
+       <Membre nom={this.state.famille.Membre7.nom}>
         <strong>Je suis un homme</strong>
         </Membre>
         <Button />
