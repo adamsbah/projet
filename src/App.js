@@ -47,9 +47,8 @@ class  App extends Component {
   }
   render(){ 
     const {titre} = this.props
-    const {famille} = this.state
-    return (
     
+    return(
       <div className="App">
       <h1>{titre}</h1>
         <Membre nom='antho' />
