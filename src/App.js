@@ -47,17 +47,18 @@ class  App extends Component {
   }
   render(){ 
     const {titre} = this.props
+    const {famille} = this.state
     
     return(
       <div className="App">
       <h1>{titre}</h1>
-        <Membre nom={this.state.famille.Membre1.nom} />
-        <Membre nom={this.state.famille.Membre2.nom}/>
-        <Membre nom={this.state.famille.Membre3.nom} />
-        <Membre nom={this.state.famille.Membre4.nom} />
-        <Membre nom={this.state.famille.Membre5.nom} />
+        <Membre nom={famille.Membre1.nom} />
+        <Membre nom={famille.Membre2.nom}/>
+        <Membre nom={famille.Membre3.nom} />
+        <Membre nom={famille.Membre4.nom} />
+        <Membre nom={famille.Membre5.nom} />
         <Membre nom={this.state.famille.Membre6.nom} />
-       <Membre nom={this.state.famille.Membre7.nom}>
+       <Membre nom={famille.Membre7.nom}>
         <strong>Je suis un homme</strong>
         </Membre>
         <Button />
