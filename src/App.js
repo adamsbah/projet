@@ -45,10 +45,18 @@ class  App extends Component {
   state = {
     famille
   }
-  handleClick = () => {
+  handleClick = num => {
     
     const famille = { ...this.state.famille}
-    famille.Membre1.age += 2
+    famille.Membre1.age += num
+    this.setState( {famille} )
+  }
+  
+  handleChage = event => {
+    
+    const famille = { ...this.state.famille}
+    const nom = event.target.value
+    famille.Membre1.nom= nom
     this.setState( {famille} )
   }
   
@@ -56,9 +64,11 @@ class  App extends Component {
     const {titre} = this.props
     const {famille} = this.state
     
+    
     return(
       <div className="App">
       <h1>{titre}</h1>
+      <input  value={famille.Membre1.nom} onChange={this.handleChange} type="text" />
         <Membre 
         age={famille.Membre1.age}
         nom={famille.Membre1.nom} />
