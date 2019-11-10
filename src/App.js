@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Membre from './components/Membre'
 import Button from './components/Button'
 import './App.css';
@@ -39,34 +39,41 @@ const famille = {
     nom: 'sadjo',
     age: 34
   }
-}
+};
 
 class  App extends Component {
   state = {
-    famille
+    famille,
+    isShow: false
   }
+  
   handleClick = num => {
     
-    const famille = { ...this.state.famille}
+    const famille = { ...this.state.famille }
     famille.Membre1.age += num
     this.setState( {famille} )
   }
   
   handleChage = event => {
     
-    const famille = { ...this.state.famille}
+    const famille = { ...this.state.famille } 
     const nom = event.target.value
+    console.log(nom)
     famille.Membre1.nom= nom
-    this.setState( {famille} )
+    this.setState({famille})
   }
   
+  handleShowDescription = () => {
+    const isShow = !this.state.isShow
+    this.setState({isShow})
+  }
   render(){ 
     const {titre} = this.props
-    const {famille} = this.state
+    const {famille, isShow} = this.state
     
     
     return(
-      <div className="App">
+      <div className= "App">
       <h1>{titre}</h1>
       <input  value={famille.Membre1.nom} onChange={this.handleChange} type="text" />
         <Membre 
@@ -90,8 +97,14 @@ class  App extends Component {
        <Membre
         age={famille.Membre7.age} 
        nom={famille.Membre7.nom}>
-        <strong>Je suis un homme</strong>
+       
+       { isShow ? <strong>Je suis un homme.</strong> : null}
+       
         </Membre>
+        <button onClick={this.handleShowDescription}>
+        {isShow ? 'Cacher' :'Montrer'}
+        </button>
+        
         <Button
         vieillir={() => this.handleClick(2)} />
        
